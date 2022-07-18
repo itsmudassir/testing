@@ -68,9 +68,9 @@ catch (err) {
 }
 
 })
-app.get('*', function(req, res){
-  res.status(404).send("no route")
-});
+// app.get('*', function(req, res){
+//   res.status(404).send("no route")
+// });
 
 // error handling middleware
 app.use(errorHandler);
