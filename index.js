@@ -25,20 +25,20 @@ app.set("trust proxy", 1);
 app.use(cookieParser());
 
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://content-api-react-client-prod.vercel.app"
-  })
-);
-
-// allow cors requests from any origin and with credentials
 // app.use(
 //   cors({
-//     origin: (origin, callback) => callback(null, true),
 //     credentials: true,
+//     origin: "https://content-api-react-client-prod.vercel.app"
 //   })
 // );
+
+// allow cors requests from any origin and with credentials
+app.use(
+  cors({
+    origin: (origin, callback) => callback(null, true),
+    credentials: true,
+  })
+);
 
 // app.use(cors())
 
