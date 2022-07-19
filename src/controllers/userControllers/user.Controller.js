@@ -170,9 +170,9 @@ function getById(req, res, next) {
 function setTokenCookie(res, token) {
     // create cookie with refresh token that expires in 7 days
     const cookieOptions = {
-        httpOnly: false,
+//         httpOnly: false,
         expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-        sameSite: 'false',
+        sameSite: 'none',
         secure: true
         
     };
