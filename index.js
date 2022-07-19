@@ -20,8 +20,17 @@ import { clearHash } from "./src/controllers/cachingControllers/redis.Controller
 const port = process.env.PORT || 7777;
 
 const app = express();
+app.set("trust proxy", 1);
 
 app.use(cookieParser());
+
+
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://content-api-react-client-prod.vercel.app"
+  })
+);
 
 // allow cors requests from any origin and with credentials
 // app.use(
@@ -31,7 +40,7 @@ app.use(cookieParser());
 //   })
 // );
 
-app.use(cors())
+// app.use(cors())
 
 
 // server.applyMiddleware({ app });
